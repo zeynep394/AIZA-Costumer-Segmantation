@@ -21,9 +21,10 @@ Kullanacağımız veri seti:
 
 ```python
 import pandas as pd
+import numpy as np
 ```
 ```
-**Not:** elimizde olan data.csv isimli excel dosyasını okuyabilmek için `df=pd.read_csv('data.csv')`
+NOT: Elimizdeki data.csv isimli excel dosyasını okuyabilmek için `df=pd.read_csv('data.csv')`
 
 kullanıyoruz, ancak bu aşamada bir utf-8 hatası aldık bunu gidermek için encodingi değiştirmemiz gerekiyor ;
 
@@ -44,3 +45,15 @@ Bizden istenilenleri şu şekilde özetleyebiliriz:
 of the segments
 - Selection of number of customers segments should be justified
 - Create RFM table ( Recency, Frequency and Money)
+
+Başlangıç için elimizdeki veriyi import ederek üç farklı kategoriye ayıralım.
+Veri import edildikten sonra görüleceği gibi customer, orders ve products olmak üzere üç farklı başlık çeşidi içeriyor. Verileri ayrı dataframe'lere bölebilmek için bu başlık isimlerinden yararlanacağız.
+
+```python
+df=pd.read_csv('data.csv',encoding='latin1')
+
+
+df_customer = df.filter(regex='Customers.')
+df_product = df.filter(regex='Products.')
+df_order = df.filter(regex='Orders.')
+```
