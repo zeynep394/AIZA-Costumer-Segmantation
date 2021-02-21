@@ -1,11 +1,21 @@
 # AIZA-Costumer-Segmantation
 Costumer Segmantation homework using clustering
 
-Merhaba, bu ödevde clustering kullanarak costumer segmantaion verisiyle çalışmayı öğreneceğiz. Haydi başlayalım!
+## Learn Clustering with Python and Pandas
 
-Önce `import pandas as pd` kullanarak pandası import ediyoruz elimizde olandata.csv isimli excel dosyasını okuyabilmek için `df=pd.read_csv('data.csv')`
+Merhaba, bu ödevde costumer segmantation verisiyle çalışarak clusteringin mantığını öğreneceğiz. Clustering gerçekleştirmek için bir çok algoritma mevcut ancak biz bugün sadece bir tanesini ele alacağız: K-means clustering. Hazırsanız haydi başlayalım!
 
-kullanoyoruz, ancak bu aşamada bir utf8 hatası aldık bunu gidermek için encodingi değiştirmemiz gerek;
+Takip edeceğimiz adımlar kabaca şu şekilde
+
+- Veri Ön Hazırlığı
+- Benzerlik Matrisi Hazırlama
+- K-means Algoritmasının Çalıştırılması
+- Sonuçların İşlenmesi
+
+### Veri Ön Hazırlığı
+Önce `import pandas as pd` kullanarak pandası import ediyoruz elimizde olan data.csv isimli excel dosyasını okuyabilmek için `df=pd.read_csv('data.csv')`
+
+kullanıyoruz, ancak bu aşamada bir utf-8 hatası aldık bunu gidermek için encodingi değiştirmemiz gerekiyor ;
 
 `df=pd.read_csv('data.csv',encoding='latin1')`
 
