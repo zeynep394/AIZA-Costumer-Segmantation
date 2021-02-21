@@ -22,11 +22,11 @@ Kullanacağımız veri seti:
 ```python
 import pandas as pd
 ```
-**Not:** elimizde olan data.csv isimli excel dosyasını okuyabilmek için `df=pd.read_csv('data.csv')`
+`**Not:** elimizde olan data.csv isimli excel dosyasını okuyabilmek için df=pd.read_csv('data.csv')
 
 kullanıyoruz, ancak bu aşamada bir utf-8 hatası aldık bunu gidermek için encodingi değiştirmemiz gerekiyor ;
 
-`df=pd.read_csv('data.csv',encoding='latin1')` Şimdi veri setimizi incelemeye başlayabiliriz.
+df=pd.read_csv('data.csv',encoding='latin1') Şimdi veri setimizi incelemeye başlayabiliriz.`
 
 **İstenilenler**
 
