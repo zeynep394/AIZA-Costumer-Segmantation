@@ -50,6 +50,24 @@ of the segments
 - Selection of number of customers segments should be justified
 - Create RFM table ( Recency, Frequency and Money)
 
+Veri ön hazırlamasının en önemli adımı olan null değerleri ele alacağız. Verimize baktığımızda bazı sütünların olması gerekenden 10 kat az veri içerdiğini görebiliyoruz. Bu tarz sütunlar için null değerleri tahmin etmek veya onları mod veya medyan alma gibi işlemler söz konusu olamaz yani bu sütunları verimizden çıkarmamız gerekir. Dataframedeki tüm sütunları dolaşarak null değer sayısı 1000den fazla olan tüm sütunları dataframe'imizden çıkarıyoruz. 
+
+```python
+for col in df.columns:
+    if df[col].notnull().sum()<1000:
+        df.drop(col, inplace=True, axis=1)
+```
+
+Bazı sütunlar ise yine eksik veri içermesine rağmen eksik veri sayısı makul bir değer olduğundan bu eksikler tahmin yöntemiyle doldurulabilir bu sayede bu tarz sütunları veri setimizde tutmaya devam edebiliriz. Eğer null değer ieren tüm sütunları dataframeden çıkarmaya kalkarsak bu tahminlerimizi olumsuz etkileyebilir bu noktaya dikkat etmek gerekir.
+
+```python
+for co in df.select_dtypes(include='object').columns:
+    df[co].fillna(df[co].mode()[0], inplace=True)
+    
+for co in df.select_dtypes(include=['float64']).columns:
+    df[co].fillna(df[co].mean(), inplace=True)
+```
+
 Başlangıç için elimizdeki veriyi import ederek üç farklı kategoriye ayıralım.
 Veri import edildikten sonra görüleceği gibi customer, orders ve products olmak üzere üç farklı başlık çeşidi içeriyor. Verileri ayrı dataframe'lere bölebilmek için bu başlık isimlerinden yararlanacağız.
 
