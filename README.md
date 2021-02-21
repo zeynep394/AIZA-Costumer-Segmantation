@@ -21,7 +21,11 @@ Kullanacağımız veri seti:
 
 ```python
 import pandas as pd
+from sklearn.cluster import KMeans
+from sklearn.metrics import silhouette_score
+import matplotlib.pyplot as plt
 import numpy as np
+%matplotlib inline
 ```
 ```
 NOT: Elimizdeki data.csv isimli excel dosyasını okuyabilmek için `df=pd.read_csv('data.csv')`
@@ -57,3 +61,4 @@ df_customer = df.filter(regex='Customers.')
 df_product = df.filter(regex='Products.')
 df_order = df.filter(regex='Orders.')
 ```
+
