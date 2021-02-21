@@ -26,9 +26,20 @@ import pandas as pd
 
 kullanıyoruz, ancak bu aşamada bir utf-8 hatası aldık bunu gidermek için encodingi değiştirmemiz gerekiyor ;
 
-`df=pd.read_csv('data.csv',encoding='latin1')`
+`df=pd.read_csv('data.csv',encoding='latin1')` Şimdi veri setimizi incelemeye başlayabiliriz.
 
-evet her şey yolunda gözüküyor!
+**İstenilenler**
+Bizden istenilenleri şu şekilde özetleyebiliriz:
 
-Şimdi veri setimizi incelemeye başlayabiliriz.
-
+- The first step for this project is to import the dataset and create three data
+frames
+  - Customer
+  - Products
+  - Orders
+- Insert the three data frames in a SQLite database
+- Import the tables from the database and merge them into a single data
+frame
+- Segment the customers using KMeans and highlight the characteristics
+of the segments
+- Selection of number of customers segments should be justified
+- Create RFM table ( Recency, Frequency and Money)
