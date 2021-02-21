@@ -5,7 +5,7 @@ Costumer Segmantation homework using clustering
 
 Merhaba, bu ödevde costumer segmantation verisiyle çalışarak clusteringin mantığını öğreneceğiz. Clustering gerçekleştirmek için bir çok algoritma mevcut ancak biz bugün sadece bir tanesini ele alacağız: K-means clustering. Hazırsanız haydi başlayalım!
 
-Takip edeceğimiz adımlar kabaca şu şekilde
+Takip edeceğimiz adımlar kabaca şu şekilde:
 
 - Veri Ön Hazırlığı
 - Benzerlik Matrisi Hazırlama
@@ -13,6 +13,8 @@ Takip edeceğimiz adımlar kabaca şu şekilde
 - Sonuçların İşlenmesi
 
 ### Veri Ön Hazırlığı
+Kullanacağımız veri seti:
+
 Önce `import pandas as pd` kullanarak pandası import ediyoruz elimizde olan data.csv isimli excel dosyasını okuyabilmek için `df=pd.read_csv('data.csv')`
 
 kullanıyoruz, ancak bu aşamada bir utf-8 hatası aldık bunu gidermek için encodingi değiştirmemiz gerekiyor ;
