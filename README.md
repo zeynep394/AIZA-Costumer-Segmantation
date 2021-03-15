@@ -1,4 +1,4 @@
-# AIZA-Costumer-Segmantation
+#Costumer-Segmantation
 Costumer Segmantation homework using clustering
 
 ## Learn Clustering with Python and Pandas
